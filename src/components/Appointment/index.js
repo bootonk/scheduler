@@ -5,16 +5,31 @@ import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
 import Form from "./Form";
+import Status from "./Status";
 import useVisualMode from "hooks/useVisualMode";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
+const SAVING = "SAVING";
 
 export default function Appointment(props) {
-  const {mode, transition, back } = useVisualMode(
+  const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+
+    transition(SAVING);
+    props.bookInterview(props.id, interview)
+    .then(() => {
+      transition(SHOW);
+    })
+  }
 
   return (
     <Fragment>
@@ -27,7 +42,10 @@ export default function Appointment(props) {
         <Show student={props.interview.student} interviewer={props.interview.interviewer} onEdit={props.onEdit} onDelete={props.onDelete} />
       )}
       {mode === CREATE && 
-        <Form dailyInterviewers={props.dailyInterviewers} onCancel={back}/>  
+        <Form dailyInterviewers={props.dailyInterviewers} onCancel={back} onSave={save}/>  
+      }
+      {mode === SAVING &&
+        <Status message={"Saving"}/>
       }
     </article>
     </ Fragment>
