@@ -1,6 +1,12 @@
+//
+// Imports
+//
+
+// Functional
 import React, { Fragment } from "react";
 import "./styles.scss";
 
+// Components
 import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
@@ -10,6 +16,12 @@ import Confirm from "./Confirm";
 import Error from "./Error";
 import useVisualMode from "hooks/useVisualMode";
 
+//
+// Appointment Component: All CRUD functionality for Appointments
+// Parent Component: Application
+//
+
+// Modes
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
@@ -20,12 +32,14 @@ const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
+// Component
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
-  function onSave(name, interviewer) {
+  // Mode Transition & Props Functions
+  const onSave = function (name, interviewer) {
     const interview = {
       student: name,
       interviewer,
@@ -41,10 +55,11 @@ export default function Appointment(props) {
       .catch(() => {
         transition(ERROR_SAVE, true);
       });
-  }
+  };
 
-  function onConfirm() {
+  const onConfirm = function () {
     transition(DELETE, true);
+
     props
       .cancelInterview(props.id)
       .then(() => {
@@ -53,8 +68,9 @@ export default function Appointment(props) {
       .catch(() => {
         transition(ERROR_DELETE, true);
       });
-  }
+  };
 
+  // Rendered Component
   return (
     <Fragment>
       <Header time={props.time} />

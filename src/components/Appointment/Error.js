@@ -1,5 +1,10 @@
+// Imports
 import React from "react";
 
+//
+// Error Component: Flag failed & incomplete Save or Delete actions
+// Component Parent: Appointment
+//
 export default function Error(props) {
   return (
     <main className="appointment__card appointment__card--error">
@@ -15,4 +20,4 @@ export default function Error(props) {
       />
     </main>
   );
-};
+}

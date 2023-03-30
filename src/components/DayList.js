@@ -1,7 +1,12 @@
+// Imports
 import React from "react";
 import DayListItem from "components/DayListItem";
 
-export default function DayList(props) { 
+//
+// DayList Component: Displaying the list of appointment days in left sidebar
+// Component Parent: Application
+//
+export default function DayList(props) {
   const days = props.days.map((day) => {
     return (
       <DayListItem
@@ -14,7 +19,5 @@ export default function DayList(props) {
     );
   });
 
-  return (
-    <ul>{days}</ul>
-  );
+  return <ul>{days}</ul>;
 }

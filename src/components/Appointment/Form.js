@@ -1,12 +1,19 @@
+// Imports
 import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
+//
+// Form Component: Create new or update existing appointment
+// Component Parent: Appointment
+//
 export default function Form(props) {
+  // State
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
 
+  // Helper Functions
   const reset = function () {
     setStudent("");
     setInterviewer(null);
@@ -16,7 +23,7 @@ export default function Form(props) {
     reset();
     props.onCancel();
     setError("");
-  }
+  };
 
   const validate = function () {
     if (student === "") {
@@ -31,8 +38,9 @@ export default function Form(props) {
 
     setError("");
     props.onSave(student, interviewer);
-  }
+  };
 
+  // Rendered Component
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
@@ -56,8 +64,12 @@ export default function Form(props) {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={validate}>Save</Button>
+          <Button danger onClick={cancel}>
+            Cancel
+          </Button>
+          <Button confirm onClick={validate}>
+            Save
+          </Button>
         </section>
       </section>
     </main>

@@ -1,6 +1,10 @@
 import React from "react";
 import Button from "components/Button";
 
+//
+// Confirm Component: Check to see if a Delete action is confirmed
+// Component Parent: Appointment
+//
 export default function Confirm(props) {
   return (
     <main className="appointment__card appointment__card--confirm">

@@ -1,8 +1,13 @@
+// Imports
 import React from "react";
 
+//
+// Empty Component: Show available appointment spot with Add button
+// Component Parent: Appointment
+//
 export default function Empty(props) {
   return (
-    <main className="appointment__add" >
+    <main className="appointment__add">
       <img
         className="appointment__add-button"
         src="images/add.png"
@@ -11,4 +16,4 @@ export default function Empty(props) {
       />
     </main>
   );
-};
+}

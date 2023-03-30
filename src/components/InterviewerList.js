@@ -1,9 +1,13 @@
+// Imports
 import React from "react";
+import PropTypes from "prop-types";
 import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
-import PropTypes from 'prop-types';
 
-
+//
+// InterviewList Component: Displaying the list of available interviewers per appointment
+// Parent Component: Appointment
+//
 export default function InterviewerList(props) {
   const interviewers = props.interviewers.map((interviewer) => {
     return (
@@ -25,6 +29,7 @@ export default function InterviewerList(props) {
   );
 }
 
+// Testing requirement for an array as a prop
 InterviewerList.propTypes = {
-  interviewers: PropTypes.array.isRequired
+  interviewers: PropTypes.array.isRequired,
 };

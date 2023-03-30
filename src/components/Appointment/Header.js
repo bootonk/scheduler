@@ -1,5 +1,10 @@
+// Imports
 import React from "react";
 
+//
+// Header Component: Show appointment time as a divider between spots
+// Component Parent: Appointment
+//
 export default function Header(props) {
   return (
     <header className="appointment__time">

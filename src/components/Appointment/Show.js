@@ -1,5 +1,10 @@
+// Imports
 import React from "react";
 
+//
+// Show Component: Display claimed appointment with details
+// Component Parent: Appointment
+//
 export default function Show(props) {
   return (
     <main className="appointment__card appointment__card--show">
@@ -28,4 +33,4 @@ export default function Show(props) {
       </section>
     </main>
   );
-};
+}

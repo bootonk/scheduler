@@ -1,8 +1,14 @@
+// Imports
 import React from "react";
 import classNames from "classnames";
 import "components/DayListItem.scss";
 
+//
+// DayListItem Component: Building each day with details for left sidebar
+// Component Parent: DayList
+//
 export default function DayListItem(props) {
+  // Working with props
   const name = props.name;
   const spots = props.spots;
 
@@ -11,6 +17,7 @@ export default function DayListItem(props) {
     "day-list__item--full": props.spots === 0,
   });
 
+  // Helper Function
   const formatSpots = function (spots) {
     if (spots === 0) {
       return "no spots remaining";
@@ -23,6 +30,7 @@ export default function DayListItem(props) {
     return `${spots} spots remaining`;
   };
 
+  // Rendered Component
   return (
     <li
       onClick={() => props.setDay(name)}
