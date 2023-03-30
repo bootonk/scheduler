@@ -1,5 +1,5 @@
 //
-// Import
+// Imports
 //
 import {
   getAppointmentsForDay,
