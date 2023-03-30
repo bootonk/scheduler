@@ -21,6 +21,7 @@ describe("Appointments", () => {
   });
 
   it("should edit an interview", () => {
+    // Act
     cy.get("[alt=Edit]").first().click({ force: true });
 
     cy.get("[data-testid=student-name-input]")
@@ -36,6 +37,7 @@ describe("Appointments", () => {
   });
 
   it("should cancel an interview", () => {
+    // Act
     cy.get("[alt=Delete]").first().click({ force: true });
 
     cy.contains("Confirm").click();
@@ -43,6 +45,7 @@ describe("Appointments", () => {
     cy.contains("Deleting").should("exist");
     cy.contains("Deleting").should("not.exist");
 
+    // Assert
     cy.contains(".appointment__card--show", "Archie Cohen").should("not.exist");
   });
 });
