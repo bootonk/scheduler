@@ -9,6 +9,12 @@ As a React app, the user will experience a single page application with SASS for
 This application has been heavily tested across the board with static, unit, integration and end to end testing. All with the help of Storybook, Jest, and Cypress.
 
 ## A Sneak Peek
+Homepage Snapshot
+![Static lander](https://github.com/bootonk/scheduler/blob/master/docs/scheduler-static.png?raw=true)
+
+Feature-rich Gif!
+![Gif of setting appointment](https://github.com/bootonk/scheduler/blob/master/docs/scheduler.gif?raw=true)
+
 
 ## Getting Started
 
