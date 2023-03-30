@@ -13,7 +13,7 @@ Homepage Snapshot
 ![Static lander](https://github.com/bootonk/scheduler/blob/master/docs/scheduler-static.png?raw=true)
 
 Feature-rich Gif!
-![Gif of setting appointment](https://github.com/bootonk/scheduler/blob/master/docs/scheduler.gif?raw=true)
+![Gif of setting appointment](https://github.com/bootonk/scheduler/blob/master/docs/scheduler-features.gif?raw=true)
 
 
 ## Getting Started
